@@ -12,22 +12,8 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-expand navbar-dark bg-primary">
-        <%= link_to "町の本屋さん", root_path, class: 'navbar-brand' %>
-        <div class="collapse navbar-collapse justify-content-end">
-          <ul class="navbar-nav">
-            <%# if user_signed_in? %>
-
-              <%= link_to "ログアウト", "#", method: :delete, class: 'nav-link' %>
-            <%# else %>
-              <%= link_to "ユーザー登録", "#", class: 'nav-link' %>
-              <%= link_to "ログイン", "#", class: 'nav-link' %>
-            <%# end %>
-          </ul>
-        </div>
-      </nav>
-    </header>
+    <%= render  "partial/header" if current_user %>
+    <%= render  "partial/alert" %>
     <%= yield %>
   </body>
 </html>
