@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <div class="row">
+      <h1 class="col-9 text-center my-3"><%= @room.title %></h1>
+      <div class="col-3">
+        <%= link_to "削除", @room, method: :delete, data: {confirm: "本当によろしいですか？"}, class: "btn btn-danger my-3" %>
+      </div>
+    </div>
+
+    <p>トーク作成機能 & トーク一覧</p>
+  </div> 
+</div>

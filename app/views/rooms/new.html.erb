@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+      <h1 class="text-center">ユーザー作成</h1>
+
+      <%= form_with(model: @room, local: true) do |f| %>
+        <% if @room.errors.any? %>
+          <p class="text-danger">タイトルは150文字以内にしてください</p>
+        <% end %>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-comtrol" %>
+
+        <%= f.submit "作成する", class: "btn btn-primary" %>
+      <% end %>
+  </div>  
+</div>
