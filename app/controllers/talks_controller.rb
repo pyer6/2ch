@@ -1,9 +1,5 @@
 class TalksController < ApplicationController
-  before_action :set_room, only: [:new, :create, :destroy]
-
-  def new
-    @talk = Talk.new
-  end
+  before_action :set_room, only: [:create, :destroy]
 
   def create
     @talk = Talk.new(talk_params)

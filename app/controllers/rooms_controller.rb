@@ -15,6 +15,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @talk = Talk.new
   end
 
   def destroy
