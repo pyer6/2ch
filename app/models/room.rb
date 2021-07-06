@@ -1,4 +1,5 @@
 class Room < ApplicationRecord
   belongs_to :user
-  validates :title, presence: true, length: {maximum: 150}
+  has_many :talks, dependent: :destroy
+  validates :title, presence: true, length: {in: 1..150}
 end

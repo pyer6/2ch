@@ -4,7 +4,7 @@
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
         <%= link_to current_user.name, edit_user_registration_path(current_user), class: 'nav-link' %>
-        <%= link_to "ルーム作成" , rooms_new_path, class: 'nav-link' %>
+        <%= link_to "ルーム作成" , new_room_path, class: 'nav-link' %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %>
       </ul>
     </div>

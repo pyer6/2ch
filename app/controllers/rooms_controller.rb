@@ -6,7 +6,6 @@ class RoomsController < ApplicationController
   end
 
   def create
-    
     @room = Room.new(room_params)
     if @room.save
       redirect_to root_url
@@ -16,7 +15,6 @@ class RoomsController < ApplicationController
   end
 
   def show
-    
   end
 
   def destroy
@@ -29,7 +27,7 @@ class RoomsController < ApplicationController
 
   private
     def room_params
-      params.require(:room).permit(:title).merge(user: current_user)
+      params.require(:room).permit(:title).merge(user_id: current_user.id)
     end
 
     def set_room
