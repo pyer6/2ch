@@ -1,8 +1,16 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
-      <h1 class="text-center">ルーム一覧</h1>
-      <% @rooms.each do |room| %>
-        <%= link_to room.title, room_path(room) %>
+      <h1 class="text-center mt-5">ルーム一覧</h1>
+
+      <%= form_with(method: :get, local: true) do |f| %>
+        <%= f.text_field :search, placeholder: "ルーム検索" %>
+        <%=f.submit "検索" %>
       <% end %>
-  </div>  
+
+      <div class="mt-3">
+        <% @rooms.each do |room| %>
+          <div><%= link_to room.title, room_path(room) %></div>
+        <% end %>
+      </div>
+  </div>
 </div>

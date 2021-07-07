@@ -28,15 +28,14 @@
     <div class="mt-3">
       <% @room.talks.each do |talk| %> 
         <div class="row">
-          <div class="col-9 border-bottom mt-3">
-            <div class="mb-3">
-              <div><%= talk.user.name %></div>
-              <div><%= talk.title %></div>
-              <div><%= talk.created_at.to_s(:datetime_jp) %></div>
+          <div class="col-9 border-bottom mt-2">
+            <div class="mt-1">
+              <div class=""><%= talk.id %>: <%= talk.title %></div>
+              <div class="small text-end"><%= talk.user.name %>: <%= talk.created_at.to_s(:datetime_jp) %></div>
             </div>
           </div>
           <div class="col-3">
-            <%= link_to "削除", room_talk_path(@room, talk), method: :delete, class: "btn btn-danger btn-sm mt-5", data: {confirm: "削除しても大丈夫ですか？"} if talk.user == current_user %>
+            <%= link_to "削除", room_talk_path(@room, talk), method: :delete, class: "btn btn-danger btn-sm mt-3", data: {confirm: "削除しても大丈夫ですか？"} if talk.user == current_user %>
           </div>
         </div>
       <% end %>

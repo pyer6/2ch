@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
-      <h1 class="text-center mt-3">ログイン</h1>
+      <h1 class="text-center mt-5">ログイン</h1>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
@@ -10,7 +10,7 @@
 
           <div class="field">
             <%= f.label :password %><br />
-            <%= f.password_field :password, class: "form-control", placeholder: "パスワードを入力してください", autocomplete: "current-password" %>
+            <%= f.password_field :password, class: "form-control", placeholder: "パスワードを入力してください(6文字以上)", autocomplete: "current-password" %>
           </div>
 
           <% if devise_mapping.rememberable? %>
