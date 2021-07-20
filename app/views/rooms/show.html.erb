@@ -10,7 +10,7 @@
     <div>
       <%= form_with(model: [@talk], url: room_talks_path(@room), local: true) do |f| %>
         <%= f.hidden_field :room_id, value: @room.id %>
-        <% if @talk.errors.any? %>
+        <% if f.object.errors.any? %>
           <p class="text-danger">1~150文字にしてください。</p>
         <% end %>
 

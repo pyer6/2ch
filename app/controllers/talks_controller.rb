@@ -7,7 +7,7 @@ class TalksController < ApplicationController
     if @talk.save
       redirect_to @room
     else
-      render :new
+      render template: "rooms/show"
     end
   end
 
