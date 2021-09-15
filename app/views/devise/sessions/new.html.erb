@@ -2,6 +2,12 @@
   <div class="col-md-6 offset-md-3">
       <h1 class="text-center mt-5">ログイン</h1>
 
+        <div class="my-5">
+          <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "btn btn-lg btn-warning form-control" %>
+        </div>
+
+        <hr>
+
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="field">
             <%= f.label :email %><br />
